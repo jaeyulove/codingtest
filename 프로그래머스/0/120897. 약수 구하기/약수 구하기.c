@@ -20,15 +20,17 @@ int* solution(int n) {
     return answer;
 }
 
-int main(void){
+int main(void) {
     int n = 24;
     int* result = solution(n);
-    if(result != NULL){
-        int* answer = result;
+    if (result == NULL) {
+        printf("memory allocation failed");
+        return 1; 
+    } else {
+        for (int i = 0; result[i] != 0; i++) {
+            printf("%d ", result[i]); 
+        }
         free(result); 
     }
-    else {
-        printf("memory alloc failed"); 
-    }
-    return 0; 
+    return 0;
 }
